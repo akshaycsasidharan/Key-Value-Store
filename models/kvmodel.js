@@ -7,7 +7,6 @@ const KvSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-// TTL (Time-To-Live) implementation
 KvSchema.index(
   { createdAt: 1 },
   {
@@ -17,7 +16,6 @@ KvSchema.index(
   }
 );
 
-// Correct way to define the model
 const KvModel = mongoose.model("KvModel", KvSchema);
 
 export default KvModel;

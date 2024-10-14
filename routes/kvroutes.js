@@ -1,5 +1,5 @@
 import express from "express";
-
+import { verifyToken } from "../middlewares/auth.js";
 import {
   createKeyValue,
   readKeyValue,
@@ -9,12 +9,12 @@ import {
 
 const router = express.Router();
 
-router.post("/kv", createKeyValue);
+router.post("/kv", verifyToken, createKeyValue);
 
-router.get("/kv/:id", readKeyValue);
+router.get("/kv", verifyToken, getkeyValue);
 
-router.get("/kv", getkeyValue);
+router.get("/kv/:id", verifyToken, readKeyValue);
 
-router.delete("/kv/:id", deleteKeyValue);
+router.delete("/kv/:id", verifyToken, deleteKeyValue);
 
 export default router;
