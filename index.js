@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import helmet from "helmet";
 import dotenv from "dotenv";
-import KvRoutes from "./routes/kvroutes.js";
+// import KvRoutes from "./routes/kvroutes.js";
 import UserRoutes from "./routes/userroute.js";
 
 dotenv.config();
@@ -13,7 +13,7 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/api/kvdata", KvRoutes);
+// app.use("/api/kvdata", KvRoutes);
 app.use("/api/user", UserRoutes);
 
 const PORT = process.env.PORT || 8080;

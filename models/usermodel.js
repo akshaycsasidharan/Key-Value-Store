@@ -17,6 +17,11 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
+    role: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
   },
   { timestamps: true }
 );
